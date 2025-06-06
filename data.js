@@ -22,11 +22,37 @@ p1.invecchia();
 console.log(p1.età)
 
 class Student extends Persona{
-  constructor(name, cognome, età, corso){
-    super(name, cognome, età)
+  constructor(nome, cognome, età, corso){
+    super(nome, cognome, età)
 
     this.corso = corso
   }
 
-
+  infoStudente (){
+    return `Ciao, sono ${this.nome} e studio ${this.corso}`
+  }
 }
+
+const sd = new Student ('Pippo', 'Coglione', 20, 'matematica')
+console.log(sd.infoStudente())
+
+
+class classeScuola{
+  constructor(studenti){
+    this.studenti = studenti
+  }
+  
+  aggiungiStudente(nome){
+    for (let i=0; i<this.studenti.length;i++){
+      if (this.studenti[i] === nome){
+        console.log('Studente già esistente')
+      }
+    }
+    this.studenti.push(nome)
+
+  }
+}
+
+const classe1 = new classeScuola(['Marco', 'Pippo', 'Mario', 'Coglione', 'Maria'])
+classe1.aggiungiStudente('Luca')
+console.log(classe1.studenti)
