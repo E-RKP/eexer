@@ -51,8 +51,16 @@ class classeScuola{
     this.studenti.push(nome)
 
   }
+
+  get nomeCompleto (){
+    for (let i=0; i<this.studenti.length;i++){
+       console.log(this.studenti[i])
+    }
+  }
+    
 }
 
 const classe1 = new classeScuola(['Marco', 'Pippo', 'Mario', 'Coglione', 'Maria'])
 classe1.aggiungiStudente('Luca')
 console.log(classe1.studenti)
+classe1.nomeCompleto
